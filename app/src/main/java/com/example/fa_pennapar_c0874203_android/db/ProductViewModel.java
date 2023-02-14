@@ -20,7 +20,7 @@ public class ProductViewModel extends AndroidViewModel {
         allEmployees = repository.getAllProducts();
     }
 
-    LiveData<List<Product>> getAllProducts() {
+    public LiveData<List<Product>> getAllProducts() {
         return allEmployees;
     }
 

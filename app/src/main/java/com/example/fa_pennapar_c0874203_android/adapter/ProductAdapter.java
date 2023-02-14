@@ -74,7 +74,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         Product currentProduct = products.get(position);
         holder.textViewName.setText(currentProduct.getName());
         holder.textViewPrice.setText(String.valueOf(currentProduct.getPrice()));
-        holder.textViewLocation.setText(currentProduct.getAddress());
+        holder.textViewLocation.setText(currentProduct.getLocation());
         holder.textViewDescription.setText(String.valueOf(currentProduct.getDescription()));
     }
 

@@ -14,23 +14,13 @@ public class Product {
     public double price;
     public double latitude;
     public double longitude;
-    public String address;
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public Product(String name, String description, double price, double latitude, double longitude, String address) {
+    public Product(String name, String description, double price, double latitude, double longitude) {
         this.name = name;
         this.description = description;
         this.price = price;
         this.latitude = latitude;
         this.longitude = longitude;
-        this.address = address;
     }
 
     public int getId() {
@@ -59,6 +49,10 @@ public class Product {
 
     public double getPrice() {
         return price;
+    }
+
+    public String getLocation() {
+        return "" + getLatitude() + ", " + getLongitude();
     }
 
     public void setPrice(double price) {
