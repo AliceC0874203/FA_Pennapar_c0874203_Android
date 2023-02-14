@@ -42,6 +42,7 @@ public class ListProductActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_product);
+        setTitle("Product List");
 
         setRecyclerViewAndAdapter();
         enableProductViewModel();
