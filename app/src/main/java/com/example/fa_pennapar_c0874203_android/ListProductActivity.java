@@ -157,7 +157,7 @@ public class ListProductActivity extends AppCompatActivity {
 
         if (requestCode == ADD_PRODUCT_REQUEST && resultCode == RESULT_OK) {
             String productName = data.getStringExtra(AddProductActivity.EXTRA_NAME);
-            String productDescription = data.getStringExtra(AddProductActivity.EXTRA_NAME);
+            String productDescription = data.getStringExtra(AddProductActivity.EXTRA_DESCRIPTION);
             double productPrice = data.getDoubleExtra(AddProductActivity.EXTRA_PRICE, 0);
             double productLatitude = data.getDoubleExtra(AddProductActivity.EXTRA_LAT, 0);
             double productLongitude = data.getDoubleExtra(AddProductActivity.EXTRA_LONG, 0);
@@ -175,7 +175,7 @@ public class ListProductActivity extends AppCompatActivity {
             }
 
             String productName = data.getStringExtra(AddProductActivity.EXTRA_NAME);
-            String productDescription = data.getStringExtra(AddProductActivity.EXTRA_NAME);
+            String productDescription = data.getStringExtra(AddProductActivity.EXTRA_DESCRIPTION);
             double productPrice = data.getDoubleExtra(AddProductActivity.EXTRA_PRICE, 0);
             double productLatitude = data.getDoubleExtra(AddProductActivity.EXTRA_LAT, 0);
             double productLongitude = data.getDoubleExtra(AddProductActivity.EXTRA_LONG, 0);

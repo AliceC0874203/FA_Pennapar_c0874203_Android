@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {
@@ -32,7 +33,6 @@ dependencies {
 
     //GG maps
     implementation 'com.google.android.gms:play-services-maps:18.1.0'
-    implementation 'com.google.android.libraries.places:places:3.0.0'
 
     //RoomDB
     implementation "androidx.room:room-runtime:2.5.0"

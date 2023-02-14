@@ -76,8 +76,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         }
     }
 
-
-
     public ProductAdapter(List<Product> products) {
         this.products = products;
         productsFull = new ArrayList<>(products);
