@@ -1,14 +1,18 @@
 package com.example.fa_pennapar_c0874203_android.adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Filter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.fa_pennapar_c0874203_android.ListProductActivity;
+import com.example.fa_pennapar_c0874203_android.MapActivity;
 import com.example.fa_pennapar_c0874203_android.R;
 import com.example.fa_pennapar_c0874203_android.db.Product;
 
@@ -36,6 +40,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         private TextView textViewPrice;
         private TextView textViewLocation;
         private TextView textViewDescription;
+        private Button locationBtn;
 
         ProductViewHolder(View itemView, final OnItemClickListener listener) {
             super(itemView);
@@ -43,6 +48,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             textViewPrice = itemView.findViewById(R.id.price);
             textViewLocation = itemView.findViewById(R.id.location);
             textViewDescription = itemView.findViewById(R.id.description);
+            locationBtn = itemView.findViewById(R.id.locationBtn);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -55,8 +61,23 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
                     }
                 }
             });
+
+            locationBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    Intent i = new Intent(v.getContext(), MapActivity.class);
+                    i.putExtra("lat",products.get(position).getLatitude());
+                    i.putExtra("lng",products.get(position).getLongitude());
+                    i.putExtra("title",products.get(position).getName());
+                    v.getContext().startActivity(i);
+                }
+            });
         }
     }
+
+
+
     public ProductAdapter(List<Product> products) {
         this.products = products;
         productsFull = new ArrayList<>(products);
